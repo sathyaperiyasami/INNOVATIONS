@@ -1,0 +1,28 @@
+def fun(s):
+    old=[]
+    lst=[]
+    for i in s:
+        old.append(ord(i))
+        lst.append(ord(i))
+    for i in range(1,len(lst)):
+        if(lst[i]%2==0):
+            if(lst[i+1]==old[i+1]):
+                x=lst[i+1]+(lst[i]%7)
+                if(x>=32 and x<=126):
+                    lst[i+1]=x
+                else:
+                    lst[i+1]=83
+        else:
+            if(lst[i-1]==old[i-1]):
+                x=lst[i-1]-(lst[i]%5)
+                if(x>=32 and x<=126):
+                    lst[i-1]=x
+                else:
+                    lst[i-1]=83
+    string=""
+    for i in lst:
+        string=string+chr(i)
+    print(string)
+
+s="sHQen}"
+fun(s)
